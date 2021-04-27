@@ -26,7 +26,7 @@ public class Dados {
 		this.itens = itens;
 	}
 	
-	public void inserirEditarItem(Itens i, int pos) {
+	public void inserirEditaItem(Itens i, int pos) {
 		this.itens[pos] = i;
 		if(pos == qtdItens) qtdItens++;
 	}

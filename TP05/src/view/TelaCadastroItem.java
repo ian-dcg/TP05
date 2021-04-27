@@ -42,15 +42,15 @@ public class TelaCadastroItem implements ActionListener {
 		//	1- CADASTRAR ITEM
 		//  2- EDITAR ITEM EXISTENTE
 	
-		if (op == 1) s = "Cadastro de Item";   //transformar em opçao 1
-		if (op == 2) s = "Editar Item";  //transformar em opção 2 
+		if (op == 1) s = "Cadastro de Item";   
+		if (op == 2) s = "Editar Item";  
 
 		janela = new JFrame(s);
 
 		//Preenche dados com dados do item clicado
 		if (op == 2) {
-			valorNomeProduto = new JTextField(dados.getItens()[pos].getNomeProduto(), 200);          	//control
-			valorPreco = new JTextField(String.valueOf(dados.getItens()[pos].getPreco()),200);			//control
+			valorNomeProduto = new JTextField(dados.getItens()[pos].getProduto(), 200);          		//control
+			valorPreco = new JTextField(String.valueOf(dados.getItens()[pos].getValorProduto()),200);	//control
 			valorSetor = new JTextField(String.valueOf(dados.getItens()[pos].getSetor()), 200);			//control
 			valorUnidade = new JTextField(String.valueOf(dados.getItens()[pos].getUnidade()), 200);		//control
 			valorQuantidade = new JTextField(String.valueOf(dados.getItens()[pos].getQuantidade()), 3);	//control
@@ -112,7 +112,7 @@ public class TelaCadastroItem implements ActionListener {
 			try {
 				boolean res;
 				if (opcao == 1) { // cadastro de novo item
-					novoDado[0] = Integer.toString(dados.getNumItens());
+					novoDado[0] = Integer.toString(dados.getQtdItens());
 				} else { // edicao de dado existente
 					novoDado[0] = Integer.toString(posicao);
 				}
