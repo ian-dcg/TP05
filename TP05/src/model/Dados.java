@@ -1,7 +1,5 @@
 package model;
 
-import java.util.*;
-
 public class Dados {
 	private Itens[] itens = new Itens[50];
 	private int qtdItens = 0;

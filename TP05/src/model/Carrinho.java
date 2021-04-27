@@ -1,7 +1,9 @@
 package model;
 
-public class Carrinho extends Mercado{
+public class Carrinho {
 	private boolean check;
+	private double valorTotal;
+	private int numItens;
 	
 	public Carrinho (int num, double tot, boolean ck) {
 		numItens = num;
@@ -15,10 +17,6 @@ public class Carrinho extends Mercado{
 	
 	public void setcheck(boolean ck) {
 		this.check = ck;
-	}
-	
-	public void setItens(Itens itens) {
-		this.itens = itens;
 	}
 	
 	public int getNumItens() {

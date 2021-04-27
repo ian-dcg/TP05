@@ -19,7 +19,7 @@ public class TelaCadastroItem implements ActionListener {
 	private JTextField valorPreco;
 	private JLabel labelSetor = new JLabel("Setor: ");
 	private JTextField valorSetor;
-	private JLabel labelUnidade = new JLabel("Unidade: ");
+	private JLabel labelUnidade = new JLabel("Unidade (medida): ");
 	private JTextField valorUnidade;
 	private JLabel labelQuantidade = new JLabel("Quantidade:  ");
 	private JTextField valorQuantidade;
@@ -161,7 +161,8 @@ public class TelaCadastroItem implements ActionListener {
 
 	public void mensagemErroCadastro() {
 		JOptionPane.showMessageDialog(null,"ERRO AO SALVAR OS DADOS!\n "
-				+ "Verifique se todos os campos foram preenchidos corretamente.\n", null, 
+				+ "Verifique se todos os campos foram preenchidos corretamente.\n" + "Certifique-se de usar ponto (.) e não vírgula (,) para números não inteiros\n"
+				, null, 
 				JOptionPane.ERROR_MESSAGE);
 	}
 	

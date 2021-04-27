@@ -1,10 +1,10 @@
 package model;
 
-public class Lista  extends Mercado {
+public class Lista  {
 	private String nomeLista;
 	private Itens [] itensRegistrados = new Itens[50];
 	int numItens = 0;
-	double ValorTotal = 0;
+	double valorTotal = 0;
 	
 	
 	//Sobrecarga
@@ -38,8 +38,6 @@ public class Lista  extends Mercado {
 	public void setNomeLista(String nome) {
 		this.nomeLista = nome;
 	}
-	
-	@Override
 	
 	public int getNumItens() {
 		return numItens;

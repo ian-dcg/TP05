@@ -32,23 +32,17 @@ public class ControleItens {
 	}
 
 	public String getSetor(int i) {
-		String nomeSetor = String.valueOf(it[i].getSetor());
-		return nomeSetor;
+		return it[i].getSetor();
 	}
 
 	public String getUnidade(int i) {
-		String nomeUnidade = String.valueOf(it[i].getUnidade());
-		return nomeUnidade;
+		return it[i].getUnidade();
 	}
 
 	public String getQuantidade(int i) {
 		String quantity = String.valueOf(it[i].getQuantidade());
 		return quantity;
 	}
-
-	/*public void setQtdAlunos(int qtdProfs) {
-		this.qtdProfs = qtdProfs;
-	}*/
 	
 	public double getValorProduto (int i) {
 		return it[i].getValorProduto();
