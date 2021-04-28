@@ -27,7 +27,8 @@ public class ControleDados {
 
 
 	public boolean inserirEditarItem(String[] dadosItens) {
-		if(!dadosItens[2].matches("^[0-9]+(.|,)?[0-9]+?$") || !dadosItens[5].matches("[0-9]+")) {
+		Double.parseDouble(dadosItens[2]);
+		if(!dadosItens[2].matches("^[0-9]+(.|,)?[0-9]*$") || !dadosItens[5].matches("[0-9]+")) {
 			return false;
 		} else {
 				Itens it = new Itens(dadosItens[1], Double.parseDouble(dadosItens[2]), 
