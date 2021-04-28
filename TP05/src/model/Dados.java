@@ -7,7 +7,20 @@ public class Dados {
 	
 	public void fillWithSomeData() {
 		for(int i = 0; i < 5; i++) {
-			itens[i] = new Itens("Produto"+i, (i+1)*1000, "Setor"+i, "Unidade"+i, (i+1)*10);		
+			if (i == 0) {
+				itens[i] = new Itens("Arroz", 20, "Comidas", "Pacote", 2);		
+			} else if (i == 1){
+				itens[i] = new Itens("Feijão", 10, "Comidas", "Pacote", 1);	
+			} else if (i == 2){
+				itens[i] = new Itens("Leite", 5, "Lactícinios", "Caixa", 5);	
+			} else if (i == 3) { 
+				itens[i] = new Itens("Pão", 2, "Padaria", "Unidades", 10);	
+			}  else if (i == 4) { 
+				itens[i] = new Itens("Carne", 20, "Açougue", "kg", 1);	
+			}
+			//CASOS GERAIS
+			//itens[i] = new Itens("Produto"+i, (i+1)*100, "Setor"+i, "Unidade"+i, (i+1)*1);	
+				
 		}
 		
 		qtdItens = 5;

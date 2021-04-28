@@ -25,7 +25,7 @@ public class TelaLista implements ActionListener, ListSelectionListener {
 			janela = new JFrame("Lista");
 			titulo = new JLabel("Itens Cadastrados");
 			cadastroItem = new JButton("Cadastrar");
-			refreshItem = new JButton("Refresh");
+			refreshItem = new JButton("Atualizar");
 
 			titulo.setFont(new Font("Arial", Font.BOLD, 20));
 			titulo.setBounds(90, 10, 250, 30);

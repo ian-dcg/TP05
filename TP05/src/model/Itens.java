@@ -20,7 +20,6 @@ public class Itens extends Mercado {
 		return "Nome do Item: " + produto + ", Preço: R$" + valorProduto;
 	}
 	
-	
 	public String getProduto() {
 		return produto;
 	}
