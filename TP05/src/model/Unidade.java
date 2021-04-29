@@ -1,5 +1,9 @@
 package model;
-
+/**Classe inutilizada na atual versão do código, os dados de Unidades foram transferidos para as classe Mercado/Itens.
+ * @author João e Ian
+ * @version 1.0 (28/04/2021)
+ *
+ */
 public class Unidade {
 	private String tipoUnidade;
 	

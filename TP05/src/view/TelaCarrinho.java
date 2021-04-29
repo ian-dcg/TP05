@@ -1,9 +1,16 @@
 package view;
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import control.*; //control
 
+/**
+ * Classe responsável por gerar a tela de Carrinho do usuário.
+ * 
+ * @author Ian e João
+ * @version 1.0 (28/04/2021)
+ */
 
 public class TelaCarrinho implements ActionListener {		
 	private JFrame janela;
@@ -13,7 +20,10 @@ public class TelaCarrinho implements ActionListener {
 	private static ControleDados dados; // control
 
 	
-	
+	/**
+	 * método responsável pela criação do da tela carrinho e inserção do valor total dos produtos.
+	 * @param d
+	 */
 	public void mostrarValorTotal(ControleDados d){ // control
 		dados = d; // control 
 		double valorTotal = 0;

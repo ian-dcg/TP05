@@ -1,5 +1,11 @@
 package model;
 
+/**
+ * Esta classe contém os principais atributos do programa e o construtor da superclasse.
+ * @author Ian e João
+ * @version 1.0 (28/04/2021)
+ */
+
 public abstract class Mercado {
 	protected String produto;
 	protected String unidade;

@@ -4,23 +4,31 @@ import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.event.*;
 import control.*; //control
-
+ /**
+  * Classe responsável pela criação do JList que constitui a Lista de Itens do Usuário.
+  * 
+  * @author Ian e João
+  * @version 1.0 (28/04/2021)
+  */
 
 public class TelaLista implements ActionListener, ListSelectionListener {		
 	private JFrame janela;
 	private JLabel titulo;
 	private JButton cadastroItem;
 	private JButton refreshItem;
-	private static ControleDados dados; // control
+	private static ControleDados dados; 
 	private JList<String> listaItensCadastrados;
 	private String[] listaItens = new String[50];
 
-	public void mostrarDados(ControleDados d){ // control
-		dados = d; // control 
-
+	/**
+	 * método que irá criar o Jlist e adicionar botões para novos cadastros e atualização de lista.
+	 * @param d
+	 */
+	public void mostrarDados(ControleDados d){ 
+		dados = d; 
 		
 			// Mostrar dados de itens cadastrados (JList)
-			listaItens = new ControleItens(dados).getNomeItem(); // control
+			listaItens = new ControleItens(dados).getNomeItem(); 
 			listaItensCadastrados = new JList<String>(listaItens);
 			janela = new JFrame("Lista");
 			titulo = new JLabel("Itens Cadastrados");
@@ -60,26 +68,28 @@ public class TelaLista implements ActionListener, ListSelectionListener {
 		
 		//Cadastro de novo item
 		if(src == cadastroItem)
-			new TelaCadastroItem().inserirEditar(1, dados, this, 0); //control 
+			new TelaCadastroItem().inserirEditar(1, dados, this, 0); 
 		
 
 		// Atualiza a lista de itens mostrados no JList
 		if(src == refreshItem) {
-			listaItensCadastrados.setListData(new ControleItens(dados).getNomeItem()); //control		
+			listaItensCadastrados.setListData(new ControleItens(dados).getNomeItem()); 	
 			listaItensCadastrados.updateUI();
 		}
 
 
 
 	}
-
+	 /**
+	  * método resposável pelo clique em um item, permitirá a edição do mesmo.
+	  */
 	//Captura eventos relacionados ao JList
 	public void valueChanged(ListSelectionEvent e) {
 		Object src = e.getSource();
 
 		if(e.getValueIsAdjusting() && src == listaItensCadastrados) {
-			new TelaCadastroItem().inserirEditar(2, dados, this,   	//control
-					listaItensCadastrados.getSelectedIndex()); 		//control 
+			new TelaCadastroItem().inserirEditar(2, dados, this,   	
+					listaItensCadastrados.getSelectedIndex()); 		
 		}
 
 	}

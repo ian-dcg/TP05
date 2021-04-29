@@ -1,5 +1,10 @@
 package model;
 
+/**Classe inutilizada na atual versão do código, os dados de Lista foram transferidos para classe Itens.
+ * @author Ian e João
+ *@version 1.0 (28/04/2021)
+ */
+
 public class Lista  {
 	private String nomeLista;
 	private Itens [] itensRegistrados = new Itens[50];

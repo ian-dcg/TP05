@@ -10,6 +10,12 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import control.*; //control
 
+/**
+ * Classe responsável pelo cadastro de um novo item, edição de um item já existente, exclusão de um item ou apenas leitura dos dados de um item.
+ * 
+ * @author Ian e João
+ * @version 1.0 (28/04/2021)
+ */
 public class TelaCadastroItem implements ActionListener {
 
 	private JFrame janela;
@@ -26,12 +32,19 @@ public class TelaCadastroItem implements ActionListener {
 	private JButton botaoExcluir = new JButton("Excluir");
 	private JButton botaoSalvar = new JButton("Salvar");
 	private String[] novoDado = new String[9];
-	private static ControleDados dados; 	//control 
+	private static ControleDados dados; 	
 	private int posicao;
 	private int opcao;
-	private String s;
-
-	public void inserirEditar(int op, ControleDados d,  //control
+	private String tituloJanela;
+	 /**
+	  * Esse método é responsável por criar uma tela que dependendo se o item existe, irá preencher com os dados do item para edição,
+	  * caso não exista irá criar a tela com as caixas de texto vazias.
+	  * @param op
+	  * @param d
+	  * @param p
+	  * @param pos
+	  */
+	public void inserirEditar(int op, ControleDados d,  
 			TelaLista p, int pos) { 
 
 		opcao = op;
@@ -42,20 +55,20 @@ public class TelaCadastroItem implements ActionListener {
 		//	1- CADASTRAR ITEM
 		//  2- EDITAR ITEM EXISTENTE
 	
-		if (op == 1) s = "Cadastro de Item";   
-		if (op == 2) s = "Editar Item";  
+		if (op == 1) tituloJanela = "Cadastro de Item";   
+		if (op == 2) tituloJanela = "Editar Item";  
 
-		janela = new JFrame(s);
+		janela = new JFrame(tituloJanela);
 
-		//Preenche dados com dados do item clicado
+		//Preenche dados com dados do item clicado (Edição de item)
 		if (op == 2) {
-			valorNomeProduto = new JTextField(dados.getItens()[pos].getProduto(), 200);          		//control
-			valorPreco = new JTextField(String.valueOf(dados.getItens()[pos].getValorProduto()),200);	//control
-			valorSetor = new JTextField(String.valueOf(dados.getItens()[pos].getSetor()), 200);			//control
-			valorUnidade = new JTextField(String.valueOf(dados.getItens()[pos].getUnidade()), 200);		//control
-			valorQuantidade = new JTextField(String.valueOf(dados.getItens()[pos].getQuantidade()), 3);	//control
+			valorNomeProduto = new JTextField(dados.getItens()[pos].getProduto(), 200);          		
+			valorPreco = new JTextField(String.valueOf(dados.getItens()[pos].getValorProduto()),200);	
+			valorSetor = new JTextField(String.valueOf(dados.getItens()[pos].getSetor()), 200);			
+			valorUnidade = new JTextField(String.valueOf(dados.getItens()[pos].getUnidade()), 200);		
+			valorQuantidade = new JTextField(String.valueOf(dados.getItens()[pos].getQuantidade()), 3);	
 			
-		} else { //Não preenche com dados
+		} else { //Não preenche com dados (Cadastro de novo Item)
 
 			valorNomeProduto = new JTextField(200);
 			valorPreco = new JTextField(200);
@@ -105,7 +118,9 @@ public class TelaCadastroItem implements ActionListener {
 		botaoExcluir.addActionListener(this);
 	}
 
-
+	/**
+	 * método que captura eventos de botões da interface e coloca insere dados cadastrados pelo usuário no pacote controle.
+	 */
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
 		if(src == botaoSalvar) {
@@ -123,7 +138,7 @@ public class TelaCadastroItem implements ActionListener {
 					novoDado[4] =  valorUnidade.getText();
 					novoDado[5] =  valorQuantidade.getText();
 					
-					res = dados.inserirEditarItem(novoDado); 	//control
+					res = dados.inserirEditarItem(novoDado); 	
 					
 				if(res) {
 					mensagemSucessoCadastro();
@@ -139,7 +154,7 @@ public class TelaCadastroItem implements ActionListener {
 			boolean res = false;
 				
 			if (opcao == 2){ //exclui item
-				res = dados.removerItem(posicao); 	//control
+				res = dados.removerItem(posicao); 	
 				if (res) mensagemSucessoExclusao(); 
 				else mensagemErroExclusaoItem(); 
 			}
@@ -161,7 +176,7 @@ public class TelaCadastroItem implements ActionListener {
 
 	public void mensagemErroCadastro() {
 		JOptionPane.showMessageDialog(null,"ERRO AO SALVAR OS DADOS!\n "
-				+ "Verifique se todos os campos foram preenchidos corretamente.\n" + "Certifique-se de usar ponto (.) e não vírgula (,) para números não inteiros\n"
+				+ "Verifique se todos os campos foram preenchidos.\n" + "Certifique-se de usar ponto (.) e não vírgula (,) para números não inteiros\n"
 				, null, 
 				JOptionPane.ERROR_MESSAGE);
 	}

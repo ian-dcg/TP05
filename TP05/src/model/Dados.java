@@ -1,10 +1,18 @@
 package model;
 
+/**
+ * Esta classe contém dados que serão inseridos ou modificados na execução do programa.
+ * @author Ian e João
+ * @version 1.0 (28/04/2021)
+ */
+
 public class Dados {
 	private Itens[] itens = new Itens[50];
 	private int qtdItens = 0;
 	
-	
+	/**
+	 * método que preenche o JList com dados aleatórios pré cadastrados
+	 */
 	public void fillWithSomeData() {
 		for(int i = 0; i < 5; i++) {
 			if (i == 0) {
@@ -36,7 +44,12 @@ public class Dados {
 	public void setItens(Itens[] itens) {
 		this.itens = itens;
 	}
-	
+	 
+	/**
+	 * método que acrescenta em 1 o número de itens para cada item criado
+	 * @param i
+	 * @param pos
+	 */
 	public void inserirEditaItem(Itens i, int pos) {
 		this.itens[pos] = i;
 		if(pos == qtdItens) qtdItens++;

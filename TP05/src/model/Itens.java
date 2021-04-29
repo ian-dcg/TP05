@@ -1,5 +1,11 @@
 package model;
 
+/**
+ * Esta classe é responsável pela criação de cada item.
+ * @author Ian e João
+ * @version 1.0 (28/04/2021)
+ */
+
 public class Itens extends Mercado {
 	private double valorProduto;
 	

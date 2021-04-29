@@ -1,5 +1,9 @@
 package model;
-
+/**Classe inutilizada na versão atual do código, os dados de carrinho foram transferidos para o pacote control - classe ControleDados
+ * @author Ian e João
+ * @version 1.0 (28/04/2021)
+ *
+ */
 public class Carrinho {
 	private boolean check;
 	private double valorTotal;
@@ -33,14 +37,6 @@ public class Carrinho {
 	
 	public void setValorTotal(double valorTotal) {
 		this.valorTotal = valorTotal;
-	}
-	
-	
-	
-	public String toString() {
-		String saida = "Valor total do Carrinho: " + valorTotal;
-		return saida;
-		
 	}
 
 }
